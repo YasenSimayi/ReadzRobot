@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170512 11:46:12.086" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\ismay\PycharmProjects\Readz\tests\loginpage.robot" id="s1" name="Loginpage">
+<test id="s1-t1" name="Valid Login">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170512 11:46:12.265" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170512 11:46:15.730" starttime="20170512 11:46:12.264"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170512 11:46:16.878" starttime="20170512 11:46:15.730"></status>
+</kw>
+<kw name="Login to Dashboard" library="LoginPage">
+<kw name="Open Browser To Login Page" library="LoginPage">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170512 11:46:16.880" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170512 11:46:20.298" starttime="20170512 11:46:16.879"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20170512 11:46:20.299" level="INFO">Opening url 'https://my.readz.com/login'</msg>
+<status status="PASS" endtime="20170512 11:46:26.768" starttime="20170512 11:46:20.298"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170512 11:46:26.769" starttime="20170512 11:46:26.768"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginPage">
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Hello, please log in to Readz.</arg>
+</arguments>
+<msg timestamp="20170512 11:46:26.800" level="INFO">Current page contains text 'Hello, please log in to Readz.'.</msg>
+<status status="PASS" endtime="20170512 11:46:26.800" starttime="20170512 11:46:26.770"></status>
+</kw>
+<status status="PASS" endtime="20170512 11:46:26.801" starttime="20170512 11:46:26.769"></status>
+</kw>
+<status status="PASS" endtime="20170512 11:46:26.801" starttime="20170512 11:46:16.879"></status>
+</kw>
+<kw name="Input Username" library="LoginPage">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=usr</arg>
+<arg>${VALID USER}</arg>
+</arguments>
+<msg timestamp="20170512 11:46:26.802" level="INFO">Typing text 'yasen@readz.com' into text field 'id=usr'</msg>
+<status status="PASS" endtime="20170512 11:46:26.918" starttime="20170512 11:46:26.801"></status>
+</kw>
+<status status="PASS" endtime="20170512 11:46:26.918" starttime="20170512 11:46:26.801"></status>
+</kw>
+<kw name="Input Password" library="LoginPage">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=pwd</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170512 11:46:26.920" level="INFO">Typing text 'readz1' into text field 'id=pwd'</msg>
+<status status="PASS" endtime="20170512 11:46:27.013" starttime="20170512 11:46:26.919"></status>
+</kw>
+<status status="PASS" endtime="20170512 11:46:27.013" starttime="20170512 11:46:26.919"></status>
+</kw>
+<kw name="Submit Credentials" library="LoginPage">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=submit</arg>
+</arguments>
+<msg timestamp="20170512 11:46:27.015" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" endtime="20170512 11:46:39.580" starttime="20170512 11:46:27.015"></status>
+</kw>
+<status status="PASS" endtime="20170512 11:46:39.580" starttime="20170512 11:46:27.014"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>h1=Dashboard</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170512 11:46:44.736" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170512 11:46:44.736" starttime="20170512 11:46:44.656"></status>
+</kw>
+<msg timestamp="20170512 11:46:44.737" level="FAIL">Text 'h1=Dashboard' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20170512 11:46:44.738" starttime="20170512 11:46:39.580"></status>
+</kw>
+<status status="FAIL" endtime="20170512 11:46:44.738" starttime="20170512 11:46:16.879"></status>
+</kw>
+<status status="FAIL" endtime="20170512 11:46:44.738" starttime="20170512 11:46:12.264"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170512 11:46:47.935" starttime="20170512 11:46:44.739"></status>
+</kw>
+<status status="PASS" endtime="20170512 11:46:47.935" starttime="20170512 11:46:44.739"></status>
+</kw>
+<status status="FAIL" endtime="20170512 11:46:47.936" critical="yes" starttime="20170512 11:46:12.263">Setup failed:
+Text 'h1=Dashboard' did not appear in 5 seconds</status>
+</test>
+<doc>This is a basic info about the whole suite</doc>
+<status status="FAIL" endtime="20170512 11:46:47.938" starttime="20170512 11:46:12.088"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Loginpage" pass="0">Loginpage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
